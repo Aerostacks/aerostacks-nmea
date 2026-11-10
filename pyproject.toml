@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aerostacks-nmea"
+version = "0.1.0"
+description = "Dependency-free NMEA-0183 sentence parser (GGA, RMC, GSA, VTG)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Aerostacks" }]
+dependencies = []
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+aerostacks_nmea = ["py.typed"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "C4", "A", "RUF"]
+
+[dependency-groups]
+dev = ["ruff>=0.15.16"]
